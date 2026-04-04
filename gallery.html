@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery — Emerald Elopements. Intimate wedding photography from Ireland's most breathtaking landscapes.">
+  <title>Gallery | Emerald Elopements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox__img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+    }
+    .lightbox__close {
+      position: fixed;
+      top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      color: var(--cream);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox__close:hover { opacity: 1; }
+    .lightbox__prev,
+    .lightbox__next {
+      position: fixed;
+      top: 50%; transform: translateY(-50%);
+      background: none; border: 1px solid rgba(245,240,232,0.3);
+      color: var(--cream);
+      font-size: 1.5rem;
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .lightbox__prev:hover,
+    .lightbox__next:hover { opacity: 1; border-color: var(--cream); }
+    .lightbox__prev { left: 1.5rem; }
+    .lightbox__next { right: 1.5rem; }
+
+    /* Gallery filter buttons */
+    .gallery-filters {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+    }
+    .gallery-filter {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid var(--cream-dk);
+      background: none;
+      color: var(--stone);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .gallery-filter:hover,
+    .gallery-filter.active {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--cream);
+    }
+
+    /* Gallery grid override for full page */
+    .gallery-full__item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav nav--solid" id="mainNav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Emerald Elopements — Home">
+        <img src="Images/Emerald Elopement Logo - Primary.png" alt="Emerald Elopements" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav__link">Home</a></li>
+        <li><a href="about.html"    class="nav__link">About</a></li>
+        <li><a href="packages.html" class="nav__link">Packages</a></li>
+        <li><a href="gallery.html"  class="nav__link active">Gallery</a></li>
+        <li><a href="blog.html"     class="nav__link">Blog</a></li>
+        <li><a href="contact.html"  class="nav__link nav__link--cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" aria-label="Gallery header">
+    <div class="page-hero__bg">
+      <img src="Images/Gallery 1.jpg" alt="Elopement photography Ireland" loading="eager">
+      <div class="page-hero__overlay"></div>
+    </div>
+    <div class="page-hero__content">
+      <span class="section__label section__label--light">The Gallery</span>
+      <h1 class="page-hero__title">Love in Ireland's<br><em>Wild Places</em></h1>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section__header fade-up">
+        <span class="section__label">Real Elopements</span>
+        <h2 id="gallery-heading" class="section__title">Every Image,<br><em>A Real Moment</em></h2>
+        <p style="max-width: 540px; margin: 1rem auto 0; text-align: center;">
+          Every photograph in this gallery is from a real elopement — a real couple,
+          a real moment, a real piece of Ireland.
+        </p>
+      </div>
+
+      <div class="gallery-filters fade-up" role="group" aria-label="Filter gallery">
+        <button class="gallery-filter active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="cliffs">Cliffs &amp; Coast</button>
+        <button class="gallery-filter" data-filter="forest">Forest &amp; Glen</button>
+        <button class="gallery-filter" data-filter="castle">Castles &amp; Ruins</button>
+      </div>
+
+      <div class="gallery-full__grid fade-up" id="galleryGrid">
+        <div class="gallery-full__item" data-category="cliffs" data-src="Images/Gallery 1.jpg">
+          <img src="Images/Gallery 1.jpg" alt="Elopement on Irish cliffs" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="forest" data-src="Images/Gallery 2.jpg">
+          <img src="Images/Gallery 2.jpg" alt="Forest elopement Ireland" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="castle" data-src="Images/Gallery 3.jpg">
+          <img src="Images/Gallery 3.jpg" alt="Castle ruins elopement" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="cliffs" data-src="Images/Gallery 4.jpg">
+          <img src="Images/Gallery 4.jpg" alt="Coastal elopement Ireland" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="forest" data-src="Images/Gallery 5.jpg">
+          <img src="Images/Gallery 5.jpg" alt="Emerald glen elopement" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="castle" data-src="Images/Gallery 6.jpg">
+          <img src="Images/Gallery 6.jpg" alt="Irish castle elopement" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="cliffs" data-src="Images/Gallery 7.jpg">
+          <img src="Images/Gallery 7.jpg" alt="Wild Atlantic Way elopement" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="forest" data-src="Images/Galley 8.jpg">
+          <img src="Images/Galley 8.jpg" alt="Woodland elopement Ireland" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="castle" data-src="Images/Gallery 9.jpg">
+          <img src="Images/Gallery 9.jpg" alt="Ancient Irish ruins ceremony" loading="lazy">
+        </div>
+        <div class="gallery-full__item" data-category="cliffs" data-src="Images/Gallery 10.jpg">
+          <img src="Images/Gallery 10.jpg" alt="Cliffside elopement Ireland" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-modal="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
+    <img src="" alt="" class="lightbox__img" id="lightboxImg">
+    <button class="lightbox__next" id="lightboxNext" aria-label="Next image">&#8594;</button>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-labelledby="gallery-cta-heading">
+    <div class="cta-section__bg">
+      <img src="Images/Home Page Photo.jpg" alt="" aria-hidden="true">
+      <div class="cta-section__overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-section__body fade-up">
+        <span class="section__label section__label--light">Your Story Next?</span>
+        <h2 id="gallery-cta-heading" class="cta-section__title">Ready to Create<br><em>Your Own Moments?</em></h2>
+        <p class="cta-section__text">
+          Every couple in this gallery started exactly where you are. Get in touch and let's start planning.
+        </p>
+        <a href="contact.html" class="btn btn--gold btn--large">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="Images/Emerald Elopement Logo - Icon.png" alt="Emerald Elopements" class="footer__logo">
+          <p class="footer__tagline">Intimate ceremonies in<br>Ireland's wildest, most beautiful places.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="footer__social" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.44.84-2.52 1.88-2.52.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.37 3.09-5.17 0-2.14-1.44-3.75-4.05-3.75-2.95 0-4.78 2.2-4.78 4.66 0 .85.25 1.44.63 1.9.18.21.2.3.14.54-.04.18-.14.61-.18.78-.06.24-.24.33-.45.24-1.26-.52-1.85-1.92-1.85-3.48 0-2.59 2.19-5.7 6.52-5.7 3.5 0 5.8 2.54 5.8 5.27 0 3.61-2 6.32-4.93 6.32-.99 0-1.92-.53-2.24-1.13l-.61 2.34c-.22.87-.82 1.96-1.22 2.62.92.28 1.88.43 2.89.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Packages</h3>
+          <ul class="footer__links">
+            <li><a href="packages.html#essentials">Just the Two of You</a></li>
+            <li><a href="packages.html#full-experience">Wild Irish Romance</a></li>
+            <li><a href="packages.html#bespoke">The Bespoke</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h3 class="footer__col-title">Get in Touch</h3>
+          <p><a href="mailto:hello@emeraldelopements.ie">hello@emeraldelopements.ie</a></p>
+          <p><a href="tel:+35387000000">+353 (0) 87 000 0000</a></p>
+          <p>Based in Ireland,<br>available nationwide &amp; beyond.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Emerald Elopements. All rights reserved.</p>
+        <p>Designed with love in Ireland &hearts;</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery filter
+    const filters = document.querySelectorAll('.gallery-filter');
+    const items   = document.querySelectorAll('.gallery-full__item');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.style.display = show ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox    = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn    = document.getElementById('lightboxClose');
+    const prevBtn     = document.getElementById('lightboxPrev');
+    const nextBtn     = document.getElementById('lightboxNext');
+
+    let visibleItems = () => [...items].filter(i => i.style.display !== 'none');
+    let currentIndex = 0;
+
+    function openLightbox(src, alt, index) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      currentIndex = index;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navigate(dir) {
+      const visible = visibleItems();
+      currentIndex = (currentIndex + dir + visible.length) % visible.length;
+      const item = visible[currentIndex];
+      lightboxImg.src = item.dataset.src;
+      lightboxImg.alt = item.querySelector('img').alt;
+    }
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        const visible = visibleItems();
+        const visIndex = visible.indexOf(item);
+        openLightbox(item.dataset.src, item.querySelector('img').alt, visIndex);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => navigate(-1));
+    nextBtn.addEventListener('click', () => navigate(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft')  navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  </script>
+</body>
+</html>

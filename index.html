@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emerald Elopements — Intimate ceremonies and elopement planning in Ireland's most breathtaking landscapes. Wild cliffs, ancient castles, emerald glens.">
+  <meta name="theme-color" content="#1e3d2f">
+  <title>Emerald Elopements | Intimate Ceremonies in Ireland</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Emerald Elopements — Home">
+        <img src="Images/Emerald Elopement Logo - Primary.png" alt="Emerald Elopements" class="nav__logo-img">
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav__link active">Home</a></li>
+        <li><a href="about.html"    class="nav__link">About</a></li>
+        <li><a href="packages.html" class="nav__link">Packages</a></li>
+        <li><a href="gallery.html"  class="nav__link">Gallery</a></li>
+        <li><a href="blog.html"     class="nav__link">Blog</a></li>
+        <li><a href="contact.html"  class="nav__link nav__link--cta">Get in Touch</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero">
+
+    <div class="hero__bg">
+      <img
+        src="Images/Home Page Photo.jpg"
+        alt="Couple walking hand in hand across golden Irish hills at sunset"
+        fetchpriority="high"
+      >
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Ireland's Intimate Wedding Specialists</p>
+      <h1 class="hero__title">Your Story,<br><em>Wildly Told</em></h1>
+      <p class="hero__subtitle">
+        Elopements &amp; intimate ceremonies in Ireland's most breathtaking landscapes — from rugged Atlantic cliffs to ancient castle ruins.
+      </p>
+      <div class="hero__actions">
+        <a href="packages.html" class="btn btn--gold btn--large">Explore Packages</a>
+        <a href="contact.html"  class="btn btn--outline btn--large">Start Planning</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       INTRO STRIP
+       ════════════════════════════════════════════════════════ -->
+  <div class="intro-strip" aria-hidden="true">
+    <div class="intro-strip__inner fade-up">
+      <p class="intro-strip__quote">
+        "We believe the most beautiful weddings are the ones that feel entirely, unapologetically <em>you.</em>"
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       WHY ELOPE
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-elope__grid">
+
+        <div class="why-elope__images fade-up">
+          <div class="why-elope__img-main">
+            <img
+              src="Images/Why Elope - Couple.jpeg"
+              alt="Couple embracing in the wild Irish landscape"
+              loading="lazy"
+            >
+          </div>
+          <div class="why-elope__img-accent">
+            <img
+              src="Images/Why Elope - Castle.jpeg"
+              alt="Ancient Irish castle ruins"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <div class="why-elope__text-block fade-up fade-up-delay-2">
+          <span class="section__label">Why Elope?</span>
+          <h2 id="why-heading">Trade the Noise<br>for <em>the Moment</em></h2>
+          <div class="why-elope__body">
+            <p>
+              Forget the guest list pressure, the seating charts, and the price tags.
+              An elopement is a declaration — just the two of you, a wild Irish landscape,
+              and a love that needs no audience.
+            </p>
+            <p>
+              From the cliffs of Moher to the Ring of Kerry, from castle ruins to
+              emerald glens — Ireland gives you a backdrop as epic as your love story.
+              And we make every detail seamless, so you can simply be present in the moment.
+            </p>
+            <a href="about.html" class="btn btn--text">Meet Rachel &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       PACKAGES PREVIEW
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--dark" aria-labelledby="packages-heading">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <span class="section__label section__label--light">Our Packages</span>
+        <h2 id="packages-heading" class="section__title section__title--light">
+          Everything You Need,<br><em>Nothing You Don't</em>
+        </h2>
+      </div>
+
+      <div class="packages-preview__grid">
+
+        <!-- Package 1 -->
+        <article class="package-card fade-up fade-up-delay-1">
+          <div class="package-card__img-wrap">
+            <img src="Images/Package 1 - Image.jpg" alt="Intimate elopement ceremony" loading="lazy">
+          </div>
+          <div class="package-card__body">
+            <span class="package-card__tag">The Essentials</span>
+            <h3 class="package-card__name">Just the Two of You</h3>
+            <p class="package-card__desc">
+              A legally binding ceremony, a stunning location, and beautiful photography.
+              Simple, meaningful, and perfect.
+            </p>
+            <p class="package-card__price">From €1,200</p>
+            <a href="packages.html" class="btn btn--outline">Learn More</a>
+          </div>
+        </article>
+
+        <!-- Package 2 (featured) -->
+        <article class="package-card package-card--featured fade-up fade-up-delay-2">
+          <div class="package-card__badge">Most Popular</div>
+          <div class="package-card__img-wrap">
+            <img src="Images/Package 2 - Image.jpg" alt="Full elopement experience in Ireland" loading="lazy">
+          </div>
+          <div class="package-card__body">
+            <span class="package-card__tag">The Full Experience</span>
+            <h3 class="package-card__name">Wild Irish Romance</h3>
+            <p class="package-card__desc">
+              Location scouting, florals, ceremony styling, full-day photography across
+              multiple locations — the complete elopement experience.
+            </p>
+            <p class="package-card__price">From €2,800</p>
+            <a href="packages.html" class="btn btn--gold">Learn More</a>
+          </div>
+        </article>
+
+        <!-- Package 3 -->
+        <article class="package-card fade-up fade-up-delay-3">
+          <div class="package-card__img-wrap">
+            <img src="Images/Package 3 - Image.jpg" alt="Bespoke luxury elopement" loading="lazy">
+          </div>
+          <div class="package-card__body">
+            <span class="package-card__tag">The Bespoke</span>
+            <h3 class="package-card__name">Completely Yours</h3>
+            <p class="package-card__desc">
+              A fully tailored experience — private estates, curated styling, videography,
+              and every detail crafted around your vision.
+            </p>
+            <p class="package-card__price">From €5,000</p>
+            <a href="packages.html" class="btn btn--outline">Learn More</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       GALLERY PREVIEW
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section__header fade-up">
+        <span class="section__label">The Gallery</span>
+        <h2 id="gallery-heading" class="section__title">Love in Ireland's<br><em>Wild Places</em></h2>
+      </div>
+    </div>
+
+    <div class="gallery-preview__grid fade-up">
+      <a href="gallery.html" class="gallery-preview__item" aria-label="View gallery">
+        <img src="Images/Gallery 1.jpg" alt="Elopement photography, Ireland" loading="lazy">
+      </a>
+      <a href="gallery.html" class="gallery-preview__item" aria-label="View gallery">
+        <img src="Images/Gallery 2.jpg" alt="Couple in Irish landscape" loading="lazy">
+      </a>
+      <a href="gallery.html" class="gallery-preview__item" aria-label="View gallery">
+        <img src="Images/Gallery 3.jpg" alt="Intimate elopement moment" loading="lazy">
+      </a>
+      <a href="gallery.html" class="gallery-preview__item" aria-label="View gallery">
+        <img src="Images/Gallery 4.jpg" alt="Wild Irish countryside elopement" loading="lazy">
+      </a>
+      <a href="gallery.html" class="gallery-preview__item" aria-label="View gallery">
+        <img src="Images/Gallery 5.jpg" alt="Elopement ceremony Ireland" loading="lazy">
+      </a>
+    </div>
+
+    <div class="container">
+      <div class="gallery-preview__cta fade-up">
+        <a href="gallery.html" class="btn btn--primary btn--large">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       TESTIMONIALS
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--cream" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section__header fade-up">
+        <span class="section__label">Kind Words</span>
+        <h2 id="testimonials-heading" class="section__title">What Couples Say</h2>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <blockquote class="testimonial fade-up fade-up-delay-1">
+          <div class="testimonial__avatar">
+            <img src="Images/Testimonial - 2.jpg" alt="Sophie & Liam" loading="lazy">
+          </div>
+          <p class="testimonial__text">
+            "Rachel made everything feel so effortless. We eloped on the Cliffs of Moher at sunrise and it was the most magical morning of our lives. Every single detail was perfect."
+          </p>
+          <cite class="testimonial__author">— Sophie &amp; Liam, Dublin</cite>
+        </blockquote>
+
+        <blockquote class="testimonial fade-up fade-up-delay-2">
+          <div class="testimonial__avatar">
+            <img src="Images/Testimonial 2.jpg" alt="Emma & Jack" loading="lazy">
+          </div>
+          <p class="testimonial__text">
+            "We flew in from New York with no idea how any of this would work. Emerald Elopements handled absolutely everything. All we had to do was show up and fall in love all over again."
+          </p>
+          <cite class="testimonial__author">— Emma &amp; Jack, New York</cite>
+        </blockquote>
+
+        <blockquote class="testimonial fade-up fade-up-delay-3">
+          <div class="testimonial__avatar">
+            <img src="Images/Testimonial 3.jpg" alt="Aoife & Ciarán" loading="lazy">
+          </div>
+          <p class="testimonial__text">
+            "The photos are absolutely stunning — friends keep asking if they're stills from a film. We'd choose an elopement over a big wedding a hundred times over."
+          </p>
+          <cite class="testimonial__author">— Aoife &amp; Ciarán, Cork</cite>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       ABOUT TEASER
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-teaser__grid">
+
+        <div class="about-teaser__img-wrap fade-up">
+          <img
+            src="Images/Rachel Image.png"
+            alt="Rachel, founder of Emerald Elopements"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-teaser__content fade-up fade-up-delay-2">
+          <span class="section__label">Meet Rachel</span>
+          <h2 id="about-heading">The Person Behind<br><em>Every Love Story</em></h2>
+          <p>
+            Hi, I'm Rachel — and I believe every couple deserves a wedding day that feels
+            completely, unapologetically theirs. After years in the events industry, I founded
+            Emerald Elopements to create something more intimate: ceremonies that strip away
+            the noise and let love do the talking.
+          </p>
+          <p>
+            Based in Ireland and endlessly in love with its wild beauty, I handle every detail
+            — from paperwork and permits to florals and photography — so you can simply
+            arrive and be present.
+          </p>
+          <a href="about.html" class="btn btn--outline-dark">My Story &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       BLOG PREVIEW
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--cream" aria-labelledby="blog-heading">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <span class="section__label">From the Blog</span>
+        <h2 id="blog-heading" class="section__title">Inspiration &amp;<br><em>Planning Guides</em></h2>
+      </div>
+
+      <div class="blog-preview__grid">
+
+        <article class="blog-card fade-up fade-up-delay-1">
+          <a href="blog.html" class="blog-card__img-wrap" aria-label="Read more">
+            <img src="Images/Why Elope - Castle.jpeg" alt="Ancient Irish castle for elopement" loading="lazy">
+          </a>
+          <div>
+            <span class="blog-card__cat">Locations</span>
+            <h3 class="blog-card__title">
+              <a href="blog.html">The 7 Most Breathtaking Elopement Locations in Ireland</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              From the rugged Dingle Peninsula to the mystical Burren, here are the spots that will make your photos look like paintings.
+            </p>
+            <a href="blog.html" class="btn btn--text">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up fade-up-delay-2">
+          <a href="blog.html" class="blog-card__img-wrap" aria-label="Read more">
+            <img src="Images/Why Elope - Couple.jpeg" alt="Couple eloping in Ireland" loading="lazy">
+          </a>
+          <div>
+            <span class="blog-card__cat">Planning</span>
+            <h3 class="blog-card__title">
+              <a href="blog.html">How to Elope in Ireland: A Complete Legal Guide</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              Everything you need to know about making your Irish elopement legally binding — paperwork, timelines, and what to expect.
+            </p>
+            <a href="blog.html" class="btn btn--text">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up fade-up-delay-3">
+          <a href="blog.html" class="blog-card__img-wrap" aria-label="Read more">
+            <img src="Images/Contact Page - Flowers.jpg" alt="Elopement floral styling" loading="lazy">
+          </a>
+          <div>
+            <span class="blog-card__cat">Style</span>
+            <h3 class="blog-card__title">
+              <a href="blog.html">What to Wear for Your Irish Elopement</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              Practical, beautiful, and utterly romantic — our guide to choosing an outfit that works with Ireland's unpredictable weather and wild beauty.
+            </p>
+            <a href="blog.html" class="btn btn--text">Read More &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       CTA
+       ════════════════════════════════════════════════════════ -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-section__bg">
+      <img src="Images/Contact Page - Flowers.jpg" alt="" aria-hidden="true">
+      <div class="cta-section__overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-section__body fade-up">
+        <span class="section__label section__label--light">Ready to Elope?</span>
+        <h2 id="cta-heading" class="cta-section__title">
+          Let's Make Your<br><em>Story Happen</em>
+        </h2>
+        <p class="cta-section__text">
+          Tell us a little about yourselves and we'll be in touch within 48 hours to chat
+          about making your dream elopement a reality.
+        </p>
+        <a href="contact.html" class="btn btn--gold btn--large">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <img src="Images/Emerald Elopement Logo - Icon.png" alt="Emerald Elopements" class="footer__logo">
+          <p class="footer__tagline">
+            Intimate ceremonies in<br>Ireland's wildest, most beautiful places.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.44.84-2.52 1.88-2.52.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.37 3.09-5.17 0-2.14-1.44-3.75-4.05-3.75-2.95 0-4.78 2.2-4.78 4.66 0 .85.25 1.44.63 1.9.18.21.2.3.14.54-.04.18-.14.61-.18.78-.06.24-.24.33-.45.24-1.26-.52-1.85-1.92-1.85-3.48 0-2.59 2.19-5.7 6.52-5.7 3.5 0 5.8 2.54 5.8 5.27 0 3.61-2 6.32-4.93 6.32-.99 0-1.92-.53-2.24-1.13l-.61 2.34c-.22.87-.82 1.96-1.22 2.62.92.28 1.88.43 2.89.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title">Packages</h3>
+          <ul class="footer__links">
+            <li><a href="packages.html">Just the Two of You</a></li>
+            <li><a href="packages.html">Wild Irish Romance</a></li>
+            <li><a href="packages.html">The Bespoke</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h3 class="footer__col-title">Get in Touch</h3>
+          <p><a href="mailto:hello@emeraldelopements.ie">hello@emeraldelopements.ie</a></p>
+          <p><a href="tel:+35387000000">+353 (0) 87 000 0000</a></p>
+          <p>Based in Ireland,<br>available nationwide &amp; beyond.</p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Emerald Elopements. All rights reserved.</p>
+        <p>Designed with love in Ireland &hearts;</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
